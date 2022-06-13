@@ -23,19 +23,24 @@ export class AppComponent {
     lname: '',
     phone: '',
   };
-  name = 'Angular';
+  name = 'Angular From Test';
 
-  validateFrom() {
-    if(this.empObj.phone.toString().length == 10 ){
-      this.emp.push(this.empObj);
-      this.empObj = {
-        fname: '',
-    lname: '',
-    phone: '',
+  validateFrom(empFor) {
+    if(empFor.valid){
+      if(this.empObj.phone.toString().length == 10 ){
+        this.emp.push(this.empObj);
+        this.empObj = {
+          fname: '',
+      lname: '',
+      phone: '',
+        }
+      }else{
+        alert("Entter valid values");
       }
     }else{
       alert("Entter valid values");
     }
+  
 
   }
 
