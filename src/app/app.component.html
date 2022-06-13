@@ -1,0 +1,21 @@
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<table style="width:100%" *ngIf="emp.length > 0">
+  <tr>
+    <th>Name</th>
+    <th>last annme</th>
+    <th>phone number</th>
+  </tr>
+  <tr *ngFor="let emp of emp;let index=index"> 
+    <td>{{emp.fname}}</td>
+    <td>{{emp.lname}}</td>
+    <td>{{emp.phone}}</td>
+    <td><button (click)="deleteEmployee(index)">Delete</button></td>
+  </tr>
+</table>
+<form #empForm id="studentForm" (ngSubmit)="validateFrom(empForm)">
+  <input type="text" name="fname" [(ngModel)]="empObj.fname" />
+  <input type="text" name="lname" [(ngModel)]="empObj.lname" />
+  <input type="number" name="phone" [(ngModel)]="empObj.phone" />
+  <button type="submit">Submit</button>
+</form>
